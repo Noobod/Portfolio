@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kapilyadav.dev"),
+  
   title: "Kapil Yadav — Full-Stack Developer",
   description:
     "Full-stack developer skilled in TypeScript, Next.js, AI systems, Node.js, DevOps and modern web apps. Open for full-time roles.",
