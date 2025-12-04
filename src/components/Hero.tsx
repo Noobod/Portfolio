@@ -1,4 +1,5 @@
 "use client";
+import toast from "react-hot-toast";
 
 export default function Hero() {
   const scrollTo = (id: string) => {
@@ -7,6 +8,7 @@ export default function Hero() {
 
   const openCV = () => {
     window.open("/Kapil_Yadav_Resume.pdf", "_blank");
+    toast.success("Opening resume...");
   };
 
   return (
@@ -14,49 +16,38 @@ export default function Hero() {
       id="top"
       className="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6"
     >
-      {/* Background Glow */}
       <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] bg-purple-600/30 blur-[150px] rounded-full animate-pulse pointer-events-none" />
 
-      {/* Profile Image */}
-      <img
-        src="/Linkedin.png"
-        alt="Kapil Yadav"
-        className="w-32 h-32 md:w-52 md:h-52 rounded-full border border-white/20 object-cover opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]"
-        style={{ animationDelay: "0.1s" }}
-      />
-
-      {/* Name */}
       <h1
-        className="mt-4 text-4xl md:text-6xl font-bold tracking-tight opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards] transition-all duration-500 hover:text-purple-400 cursor-default"
+        className="mt-4 text-4xl md:text-6xl font-bold tracking-tight opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards] transition-all duration-500 hover:text-purple-400 hover:tracking-wider cursor-default"
         style={{ animationDelay: "0.3s" }}
       >
         Kapil Yadav
       </h1>
 
-      {/* Subtitle */}
-      <p className="mt-2 text-base md:text-lg text-gray-400 max-w-md">
-        Full-Stack Developer • TypeScript • AI • Next.js
+      <p className="mt-2 text-base md:text-lg text-gray-400 max-w-md relative group">
+        Full-Stack Developer • MERN • TypeScript • Next.js • WordPress Plugins
+        <span className="block h-[2px] w-0 bg-purple-500 transition-all duration-300 group-hover:w-full mx-auto mt-1"></span>
       </p>
 
-      {/* Buttons */}
+      <p className="mt-2 text-sm md:text-base text-gray-500 italic">
+        Based in Sydney • Open to Full-Time
+      </p>
+
       <div className="mt-7 flex flex-wrap gap-4 justify-center">
+        
+        {/* View Projects */}
         <button
-          className="px-5 py-2 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 transition rounded-lg cursor-pointer text-sm md:text-base"
           onClick={() => scrollTo("#projects")}
+          className="px-5 py-2 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 transition rounded-lg cursor-pointer text-sm md:text-base"
         >
           View Projects
         </button>
 
+        {/* Download CV */}
         <button
-          className="px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-white transition rounded-lg cursor-pointer text-sm md:text-base"
-          onClick={() => scrollTo("#contact")}
-        >
-          Contact Me
-        </button>
-
-        <button
-          className="px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-white transition rounded-lg cursor-pointer text-sm md:text-base"
           onClick={openCV}
+          className="px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-purple-500 hover:text-purple-300 hover:bg-white/5 transition rounded-lg cursor-pointer text-sm md:text-base"
         >
           Download CV
         </button>

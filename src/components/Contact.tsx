@@ -1,7 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function Contact() {
+  const copyEmail = () => {
+    navigator.clipboard.writeText("ykapil086@gmail.com");
+    toast.success("Email copied!");
+    setTimeout(() => {
+      window.location.href = "mailto:ykapil086@gmail.com";
+    }, 400);
+  };
   return (
     <section
       id="contact"
@@ -26,8 +34,8 @@ export default function Contact() {
         viewport={{ once: true }}
         className="text-gray-400 text-sm md:text-base leading-relaxed mb-10"
       >
-        I'm open to full-time developer roles, internships, freelance work  
-        or any collaboration that brings ideas to life.
+        I'm open to full-time developer roles, internships, freelance work or
+        any collaboration that brings ideas to life.
       </motion.p>
 
       {/* Email Button */}

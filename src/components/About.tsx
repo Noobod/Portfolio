@@ -32,7 +32,7 @@ export default function About() {
 
         <p>
           I enjoy working with modern JavaScript ecosystems — especially 
-          <span className="text-purple-400 font-semibold"> TypeScript, Next.js, Node.js, MongoDB, </span> 
+          <span className="text-purple-400 font-semibold"> MERN, TypeScript, Next.js, MongoDB </span> 
           and AI-powered features.
         </p>
 

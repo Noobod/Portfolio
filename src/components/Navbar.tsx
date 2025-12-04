@@ -11,26 +11,45 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const closeMenu = () => setOpen(false);
+  const scrollToTop = () => {
+    document.querySelector("#top")?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  };
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full px-6 md:px-10 py-4 flex justify-between items-center z-50 transition-all duration-300 backdrop-blur-xl ${
-        scrolled ? "bg-white/10 border-b border-white/20" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full px-6 md:px-10 py-4 flex justify-between items-center z-50 transition-all duration-300 backdrop-blur-xl 
+      ${
+        scrolled
+          ? "dark:bg-white/10 dark:border-white/20 bg-black/5 border-black/10"
+          : "bg-transparent"
       }`}
     >
-      {/* Logo / Name */}
-      <h1 className="text-lg font-semibold cursor-pointer">Kapil Yadav</h1>
+      {/* Logo */}
+      <button
+        onClick={scrollToTop}
+        className="text-lg font-semibold cursor-pointer hover:text-purple-400 transition"
+      >
+        Kapil Yadav
+      </button>
 
-      {/* Desktop Nav */}
+      {/* Desktop Navigation */}
       <nav className="hidden md:flex gap-8 text-sm text-gray-300 items-center">
-        <a href="#top" className="hover:text-white transition">Home</a>
-        <a href="#about" className="hover:text-white transition">About Me</a>
-        <a href="#projects" className="hover:text-white transition">Projects</a>
-        <a href="#skills" className="hover:text-white transition">Skills</a>
-        <a href="#experience" className="hover:text-white transition">Experience</a>
-        <a href="#contact" className="hover:text-white transition">Contact</a>
+        <a href="#top" className="hover:text-purple-400 transition">Home</a>
+        <a href="#about" className="hover:text-purple-400 transition">About Me</a>
+        <a href="#projects" className="hover:text-purple-400 transition">Projects</a>
+        <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
+        <a href="#experience" className="hover:text-purple-400 transition">Experience</a>
+        <a href="/blog" className="hover:text-purple-400 transition">Blog</a>
 
+        <a
+          href="#contact"
+          className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition"
+        >
+          Contact
+        </a>
+
+        {/* Social Icons */}
         <div className="flex gap-4 ml-4">
           <a href="https://github.com/Noobod" target="_blank">
             <svg className="w-6 h-6 fill-gray-400 hover:fill-white transition" viewBox="0 0 24 24">
@@ -46,22 +65,26 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Button */}
-      <button onClick={() => setOpen(!open)} className="md:hidden text-xl text-gray-300 hover:text-white transition">
+      {/* Mobile Button */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="md:hidden text-xl text-gray-300 hover:text-white transition"
+      >
         {open ? "✖" : "☰"}
       </button>
 
-      {/* Mobile Slide Menu */}
+      {/* Mobile Menu */}
       {open && (
-        <div className="absolute top-0 right-0 w-64 h-screen bg-black/90 backdrop-blur-xl px-8 py-10 flex flex-col text-lg gap-6 md:hidden z-50">
-          <button className="self-end text-2xl" onClick={closeMenu}>✖</button>
+        <div className="absolute top-0 right-0 w-64 h-screen bg-black/90 backdrop-blur-xl px-8 py-10 flex flex-col gap-6 text-lg md:hidden">
+          <button className="self-end text-2xl" onClick={() => setOpen(false)}>✖</button>
 
-          <a href="#top" onClick={closeMenu} className="hover:text-purple-400">Home</a>
-          <a href="#about" onClick={closeMenu} className="hover:text-purple-400">About Me</a>
-          <a href="#projects" onClick={closeMenu} className="hover:text-purple-400">Projects</a>
-          <a href="#skills" onClick={closeMenu} className="hover:text-purple-400">Skills</a>
-          <a href="#experience" onClick={closeMenu} className="hover:text-purple-400">Experience</a>
-          <a href="#contact" onClick={closeMenu} className="hover:text-purple-400">Contact</a>
+          <a href="#top" onClick={() => setOpen(false)} className="hover:text-purple-400">Home</a>
+          <a href="#about" onClick={() => setOpen(false)} className="hover:text-purple-400">About Me</a>
+          <a href="#projects" onClick={() => setOpen(false)} className="hover:text-purple-400">Projects</a>
+          <a href="#skills" onClick={() => setOpen(false)} className="hover:text-purple-400">Skills</a>
+          <a href="#experience" onClick={() => setOpen(false)} className="hover:text-purple-400">Experience</a>
+          <a href="/blog" onClick={() => setOpen(false)} className="hover:text-purple-400">Blog</a>
+          <a href="#contact" onClick={() => setOpen(false)} className="hover:text-purple-400">Contact</a>
         </div>
       )}
     </header>
