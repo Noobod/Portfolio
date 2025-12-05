@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 
 export default function BlogPage() {
-  const postsDir = path.join(process.cwd(), "src/app/blog/posts");
+  const postsDir = path.join(process.cwd(), "src/content/posts");
 
   const posts = fs.readdirSync(postsDir).map((file) => ({
     slug: file.replace(".mdx", ""),

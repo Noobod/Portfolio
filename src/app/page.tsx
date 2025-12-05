@@ -12,18 +12,27 @@ import BlogPreview from "../components/BlogPreview";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-[#0b0b12] to-black text-white">
+    <div className="min-h-screen">
+      <Navbar />
+
+      {/* SAFE: wrapped in client animation */}
       <PageWrapper>
-        <Navbar />
         <Hero />
         <About />
         <Projects />
         <Skills />
         <Experience />
-        <BlogPreview />
+      </PageWrapper>
+
+      {/* VERY IMPORTANT: BlogPreview must be OUTSIDE client wrapper */}
+      <BlogPreview />
+
+      {/* SAFE again */}
+      <PageWrapper>
         <Contact />
         <Footer />
       </PageWrapper>
+
       <ChatButton />
     </div>
   );

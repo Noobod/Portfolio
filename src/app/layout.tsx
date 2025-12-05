@@ -41,12 +41,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>
-        <ScrollProgress />
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} bg-black`}
+    >
+      <body className="bg-gradient-to-br from-black via-[#0b0b12] to-black text-white min-h-screen">
+        
+        {/* Render pages FIRST (server components stay safe) */}
         {children}
+
+        {/* Client components AFTER children */}
+        <ScrollProgress />
         <Analytics />
         <Toaster position="top-right" />
+
       </body>
     </html>
   );

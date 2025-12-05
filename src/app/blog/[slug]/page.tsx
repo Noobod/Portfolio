@@ -1,35 +1,32 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 import { notFound } from "next/navigation";
-import { compileMDX } from "next-mdx-remote/rsc";
+import { compile } from "@mdx-js/mdx";
+import * as runtime from "react/jsx-runtime";
 
-interface BlogPostProps {
-  params: Promise<{ slug: string }>;
-}
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // ⬅ REQUIRED in Next.js 15/16
 
-export default async function BlogPost({ params }: BlogPostProps) {
-  // ⬅️ NEW: unwrap the Promise
-  const { slug } = await params;
-
-  const filePath = path.join(
-    process.cwd(),
-    "src/app/blog/posts",
-    `${slug}.mdx`
-  );
+  const filePath = path.join(process.cwd(), "src/content/posts", `${slug}.mdx`);
 
   if (!fs.existsSync(filePath)) return notFound();
 
-  const file = fs.readFileSync(filePath, "utf-8");
+  const raw = fs.readFileSync(filePath, "utf8");
+  const { content } = matter(raw);
 
-  const { content } = await compileMDX<any>({
-    source: file,
-    mdxOptions: { parseFrontmatter: true },
-  });
+  const compiled = String(
+    await compile(content, { outputFormat: "function-body" })
+  );
+
+  const MDXComponent = new Function(String(compiled))({
+    ...runtime,
+  }).default;
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6 bg-gradient-to-b from-black via-[#0b0b12] to-black text-white">
-      <article className="prose prose-invert max-w-3xl mx-auto prose-h1:text-white prose-h2:text-purple-300 prose-p:text-gray-300">
-        {content}
+    <div className="min-h-screen pt-32 pb-20 px-6 text-white">
+      <article className="prose prose-invert max-w-3xl mx-auto">
+        <MDXComponent />
       </article>
     </div>
   );

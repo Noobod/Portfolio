@@ -13,15 +13,21 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+
     "plugins": [
       {
         "name": "next"
       }
     ],
+
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    // ⭐ ADD THIS ⭐
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",
