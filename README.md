@@ -107,7 +107,7 @@ npm run dev
 
 Kapil Yadav
 Sydney, Australia
-📧 kapil.work.dev@gmail.com
+📧 ykapil086@gmail.com
 
 🌐 portfolio: https://kapilyadav.dev
 
