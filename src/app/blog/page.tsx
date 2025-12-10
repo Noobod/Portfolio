@@ -1,17 +1,27 @@
 import fs from "fs";
 import path from "path";
+import matter from "gray-matter";
 import Link from "next/link";
 
 export default function BlogPage() {
   const postsDir = path.join(process.cwd(), "src/content/posts");
 
-  const posts = fs.readdirSync(postsDir).map((file) => ({
-    slug: file.replace(".mdx", ""),
-    title: file
-      .replace(".mdx", "")
-      .replace(/-/g, " ")
-      .replace(/\b\w/g, (char) => char.toUpperCase()),
-  }));
+  // Read all MDX files
+  const posts = fs.readdirSync(postsDir)
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => {
+      const filePath = path.join(postsDir, file);
+      const raw = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(raw);
+
+      return {
+        slug: file.replace(".mdx", ""),
+        title: data.title || file.replace(".mdx", ""),
+        date: data.date ? new Date(data.date) : new Date(0),
+      };
+    })
+    // Sort by latest date first
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 bg-gradient-to-b from-black via-[#0b0b12] to-black text-white">
@@ -35,9 +45,7 @@ export default function BlogPage() {
               <h2 className="text-xl font-semibold group-hover:text-purple-400 transition">
                 {title}
               </h2>
-              <p className="text-gray-500 text-sm mt-1">
-                Click to read →
-              </p>
+              <p className="text-gray-500 text-sm mt-1">Click to read →</p>
             </Link>
           ))}
         </div>

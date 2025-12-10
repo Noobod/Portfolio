@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 const education = [
   {
     title: "Master of Information Technology",
-    school: "Australia (2025)",
+    school: "Asia Pacific International College, Australia (2025)",
     details: "Focus on software engineering, cloud, and full-stack development."
   },
   {
-    title: "Bachelor of Computer Applications",
-    school: "India (2019)",
+    title: "Bachelor of Technology ",
+    school: "Jodhpur National University, India (2019)",
     details: "Learned fundamentals in programming, DBMS, and software development."
   }
 ];
