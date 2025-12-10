@@ -32,24 +32,18 @@ export default function About() {
 
         <p>
           Most of my work has been with the
-          <span className="text-purple-400 font-semibold">
-            MERN stack, TypeScript, Next.js, and MongoDB
+          <span className="text-purple-400 font-semibold"> MERN stack, TypeScript, Next.js, and MongoDB
           </span>
-          , and I’ve recently been doing a lot with
-          <span className="text-purple-400 font-semibold">
-            WordPress custom plugins and backend automation
-          </span>
-          during my internship.
+          , and I’ve recently been doing a lot with <span className="text-purple-400 font-semibold"> WordPress custom plugins and backend automation
+          </span> during my internship.
         </p>
 
         <p>
           One of my favourite projects is a
-          <span className="text-purple-400 font-semibold">
-            logistics automation platform (XFlyve)
-          </span>
-          that replaced spreadsheets, manual updates, and phone calls — reducing
+          <span className="text-purple-400 font-semibold"> logistics automation platform (XFlyve)
+          </span> that replaced spreadsheets, manual updates, and phone calls — reducing
           admin effort by
-          <span className="text-purple-400 font-semibold">70%</span>. I also
+          <span className="text-purple-400 font-semibold"> 70%</span>. I also
           built <span className="text-purple-400 font-semibold">Meetify</span>{" "}
           (a real-time WebRTC meeting app),
           <span className="text-purple-400 font-semibold">TradeTrack</span> (a
@@ -69,8 +63,7 @@ export default function About() {
 
         <p>
           I’m currently in Sydney and open to a
-          <span className="text-purple-400 font-semibold">
-            full-time developer role
+          <span className="text-purple-400 font-semibold"> full-time developer role
           </span>
           . I want to be part of a team where I can learn from experienced
           engineers, contribute to meaningful projects, and keep improving as a
