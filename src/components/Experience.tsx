@@ -57,7 +57,7 @@ export default function Experience() {
           <div className="absolute -left-[12px] top-1 w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_12px_rgba(168,85,247,0.7)]" />
 
           <h3 className="text-lg md:text-xl font-semibold">
-            XFlyve Logistics — Automation Developer
+            XFlyve Logistics — Admin & Automation Developer
           </h3>
 
           <p className="text-gray-400 text-xs md:text-sm mt-1">

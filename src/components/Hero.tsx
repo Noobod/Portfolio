@@ -7,7 +7,7 @@ export default function Hero() {
   };
 
   const openCV = () => {
-    window.open("/Kapil_Yadav_Resume.pdf", "_blank");
+    window.open("/Kapil_Yadav_Junior_FullStack_Developer_Resume.pdf", "_blank");
     toast.success("Opening resume...");
   };
 

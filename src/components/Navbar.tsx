@@ -38,8 +38,9 @@ export default function Navbar() {
         <a href="#top" className="hover:text-purple-400 transition">Home</a>
         <a href="#about" className="hover:text-purple-400 transition">About Me</a>
         <a href="#projects" className="hover:text-purple-400 transition">Projects</a>
-        <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
+        {/* <a href="#skills" className="hover:text-purple-400 transition">Skills</a> */}
         <a href="#experience" className="hover:text-purple-400 transition">Experience</a>
+        {/* <a href="/education" className="hover:text-purple-400 transition">Education</a> */}
         <a href="/blog" className="hover:text-purple-400 transition">Blog</a>
 
         <a
@@ -81,8 +82,9 @@ export default function Navbar() {
           <a href="#top" onClick={() => setOpen(false)} className="hover:text-purple-400">Home</a>
           <a href="#about" onClick={() => setOpen(false)} className="hover:text-purple-400">About Me</a>
           <a href="#projects" onClick={() => setOpen(false)} className="hover:text-purple-400">Projects</a>
-          <a href="#skills" onClick={() => setOpen(false)} className="hover:text-purple-400">Skills</a>
+          {/* <a href="#skills" onClick={() => setOpen(false)} className="hover:text-purple-400">Skills</a> */}
           <a href="#experience" onClick={() => setOpen(false)} className="hover:text-purple-400">Experience</a>
+          {/* <a href="#education" onClick={() => setOpen(false)} className="hover:text-purple-400">Education</a> */}
           <a href="/blog" onClick={() => setOpen(false)} className="hover:text-purple-400">Blog</a>
           <a href="#contact" onClick={() => setOpen(false)} className="hover:text-purple-400">Contact</a>
         </div>

@@ -9,6 +9,7 @@ import Skills from "../components/Skills";
 import About from "../components/About";
 import Footer from "../components/Footer";
 import BlogPreview from "../components/BlogPreview";
+import Education from "../components/Education";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Experience />
+        <Education />
       </PageWrapper>
 
       {/* VERY IMPORTANT: BlogPreview must be OUTSIDE client wrapper */}
