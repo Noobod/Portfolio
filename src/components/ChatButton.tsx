@@ -8,11 +8,20 @@ type ChatMessage = {
   content: string;
 };
 
+const SUGGESTED_QUESTIONS = [
+  "What skills do you have?",
+  "Tell me about your projects",
+  "What did you build at Softlabs?",
+  "What is XFlyve?",
+  "What experience do you have?",
+  "Are you available full-time?",
+  "Where can I see your resume?",
+];
+
 export default function ChatButton() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const chatRef = useRef<HTMLDivElement>(null);
@@ -43,7 +52,7 @@ export default function ChatButton() {
     }, 100);
   };
 
-  // Load saved chat
+  // Load saved chat (client only)
   useEffect(() => {
     const saved = localStorage.getItem("kapil-ai-chat");
     if (saved) {
@@ -59,8 +68,8 @@ export default function ChatButton() {
 
   // Send message
   const sendMessage = async (text: string = "") => {
-    const msgToSend = text || input;
-    if (!msgToSend.trim()) return;
+    const msgToSend = (text || input).trim();
+    if (!msgToSend) return;
 
     const userMsg: ChatMessage = { role: "user", content: msgToSend };
     setMessages((prev) => [...prev, userMsg]);
@@ -71,9 +80,7 @@ export default function ChatButton() {
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msgToSend }),
       });
 
@@ -81,39 +88,31 @@ export default function ChatButton() {
 
       const botMsg: ChatMessage = {
         role: "assistant",
-        content: data.reply || "I couldn't process that, try again!",
+        content: data.reply || "Sorry — I couldn't process that. Please try again.",
       };
 
       setMessages((prev) => [...prev, botMsg]);
-    } catch (error) {
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "⚠️ Error: Unable to connect to Kapil AI.",
+          content: "⚠️ Error: Unable to connect right now. Please try again.",
         },
       ]);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
-
-  const suggestions = [
-    "What skills does Kapil know?",
-    "Show me Kapil's best projects",
-    "Tell me about XFlyve TMS",
-    "What experience does Kapil have?",
-    "Can I see his resume?",
-    "Is Kapil available full-time?",
-  ];
 
   return (
     <>
       {/* Floating Button */}
       <motion.button
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 0.92 }}
         animate={{ y: open ? 10 : 0 }}
         onClick={() => setOpen(true)}
+        aria-label="Open chat"
         className="fixed bottom-20 right-5 md:right-6 w-12 h-12 md:w-14 md:h-14 
                    rounded-full bg-purple-600 hover:bg-purple-700 text-white 
                    flex items-center justify-center shadow-xl 
@@ -126,15 +125,17 @@ export default function ChatButton() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 120, damping: 12 }}
-            className="fixed inset-0 z-[9999] flex items-end justify-end 
-                       pointer-events-none"
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 130, damping: 14 }}
+            className="fixed inset-0 z-[9999] flex items-end justify-end pointer-events-none"
           >
-            {/* Click blocker for the rest of the page */}
-            <div className="absolute inset-0 bg-black/40 pointer-events-auto" />
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/40 pointer-events-auto"
+              onClick={() => setOpen(false)}
+            />
 
             {/* Chat window */}
             <div className="relative bottom-6 right-4 md:right-6 pointer-events-auto">
@@ -145,9 +146,14 @@ export default function ChatButton() {
               >
                 {/* Header */}
                 <div className="flex justify-between items-center mb-3">
-                  <p className="font-semibold text-sm md:text-base">
-                    Kapil AI Assistant
-                  </p>
+                  <div>
+                    <p className="font-semibold text-sm md:text-base">
+                      Kapil’s Portfolio Assistant
+                    </p>
+                    <p className="text-[11px] md:text-xs text-gray-400">
+                      Ask about projects, experience, skills, or availability.
+                    </p>
+                  </div>
 
                   <div className="flex gap-3 items-center">
                     <button
@@ -163,30 +169,32 @@ export default function ChatButton() {
                     <button
                       className="text-gray-400 hover:text-white text-lg cursor-pointer"
                       onClick={() => setOpen(false)}
+                      aria-label="Close chat"
                     >
                       ✖
                     </button>
                   </div>
                 </div>
 
-                {/* Scrollable area: suggestions + messages + typing */}
+                {/* Scroll area */}
                 <div
                   ref={chatRef}
                   className="flex-1 overflow-y-auto overscroll-contain space-y-3 text-xs md:text-sm 
                              p-2 rounded-lg border border-white/10"
                 >
-                  {/* Suggestions */}
+                  {/* Suggestions (only when chat is empty) */}
                   {messages.length === 0 && (
                     <div className="text-gray-300">
                       <p className="font-semibold mb-2">Try asking:</p>
 
                       <div className="flex flex-wrap gap-2">
-                        {suggestions.map((q) => (
+                        {SUGGESTED_QUESTIONS.map((q) => (
                           <button
                             key={q}
                             onClick={() => sendMessage(q)}
                             className="px-2 py-1 bg-white/10 border border-white/20 
-                                       rounded-md hover:bg-purple-600/30 transition text-gray-200"
+                                       rounded-md hover:bg-purple-600/30 hover:border-purple-500/40
+                                       transition text-gray-200"
                           >
                             {q}
                           </button>
@@ -201,8 +209,8 @@ export default function ChatButton() {
                       key={i}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className={`p-2 rounded-lg max-w-[85%] leading-relaxed ${
+                      transition={{ duration: 0.18 }}
+                      className={`p-2 rounded-lg max-w-[88%] leading-relaxed whitespace-pre-line ${
                         msg.role === "user"
                           ? "ml-auto bg-purple-600 text-white"
                           : "bg-white/10 text-gray-200"
@@ -212,15 +220,15 @@ export default function ChatButton() {
                     </motion.div>
                   ))}
 
-                  {/* Typing Indicator */}
+                  {/* Typing indicator */}
                   {loading && (
                     <div className="bg-white/10 text-gray-300 p-2 rounded-lg inline-block">
-                      ✨ Kapil AI is thinking…
+                      ✨ Thinking…
                     </div>
                   )}
                 </div>
 
-                {/* Input Box */}
+                {/* Input */}
                 <div className="mt-3 flex gap-2">
                   <input
                     value={input}
@@ -237,8 +245,9 @@ export default function ChatButton() {
                   />
                   <button
                     onClick={() => sendMessage()}
+                    disabled={loading}
                     className="px-3 py-2 bg-purple-600 hover:bg-purple-700 
-                               rounded-md text-xs md:text-sm"
+                               rounded-md text-xs md:text-sm disabled:opacity-60"
                   >
                     Send
                   </button>

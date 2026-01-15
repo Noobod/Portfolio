@@ -14,13 +14,13 @@ export default function BlogPage() {
       const raw = fs.readFileSync(filePath, "utf8");
       const { data } = matter(raw);
 
-      const fallbackTitle = file
-        .replace(".mdx", "")
+      const fileSlug = file.replace(".mdx", "");
+      const fallbackTitle = fileSlug
         .replace(/-/g, " ")
         .replace(/\b\w/g, (c) => c.toUpperCase());
 
       return {
-        slug: (data.slug as string) || file.replace(".mdx", ""),
+        slug: fileSlug, // ✅ ALWAYS filename
         title: (data.title as string) || fallbackTitle,
         date: data.date ? new Date(data.date as string) : new Date(0),
       };

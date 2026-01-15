@@ -47,14 +47,16 @@ export default function About() {
           <span className="text-purple-400 font-semibold">
             XFlyve (logistics automation)
           </span>
-          , which replaced spreadsheet-heavy coordination and reduced daily admin
-          effort by{" "}
+          , which replaced spreadsheet-heavy coordination and reduced daily
+          admin effort by{" "}
           <span className="text-purple-400 font-semibold">~70%</span>. I’ve also
           built{" "}
-          <span className="text-purple-400 font-semibold">Meetify</span> (a
-          real-time WebRTC meeting app) and{" "}
+          <span className="text-purple-400 font-semibold">Wanderlust</span> (a
+          full-stack accommodation booking platform),{" "}
           <span className="text-purple-400 font-semibold">TradeTrack</span> (a
-          trading dashboard simulation).{" "}
+          trading dashboard simulation), and{" "}
+          <span className="text-purple-400 font-semibold">Meetify</span> (a
+          real-time WebRTC meeting app).{" "}
           <span className="text-purple-400 font-semibold">JobPilot</span> is a
           planned project I’m designing to automate parts of the job search
           process.
