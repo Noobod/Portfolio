@@ -51,8 +51,6 @@ Tooling & Deployment
 
 Vercel
 
-GitHub Actions (CI/CD ready)
-
 Optimized image & page rendering
 
 ## Project Structure
