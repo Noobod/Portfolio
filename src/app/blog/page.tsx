@@ -6,27 +6,30 @@ import Link from "next/link";
 export default function BlogPage() {
   const postsDir = path.join(process.cwd(), "src/content/posts");
 
-  // Read all MDX files
-  const posts = fs.readdirSync(postsDir)
+  const posts = fs
+    .readdirSync(postsDir)
     .filter((file) => file.endsWith(".mdx"))
     .map((file) => {
       const filePath = path.join(postsDir, file);
       const raw = fs.readFileSync(filePath, "utf8");
       const { data } = matter(raw);
 
+      const fallbackTitle = file
+        .replace(".mdx", "")
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+
       return {
-        slug: file.replace(".mdx", ""),
-        title: data.title || file.replace(".mdx", ""),
-        date: data.date ? new Date(data.date) : new Date(0),
+        slug: (data.slug as string) || file.replace(".mdx", ""),
+        title: (data.title as string) || fallbackTitle,
+        date: data.date ? new Date(data.date as string) : new Date(0),
       };
     })
-    // Sort by latest date first
     .sort((a, b) => b.date.getTime() - a.date.getTime());
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 bg-gradient-to-b from-black via-[#0b0b12] to-black text-white">
       <div className="max-w-3xl mx-auto">
-        
         <h1 className="text-4xl font-bold text-center mb-4">
           Blog & Case Studies
         </h1>

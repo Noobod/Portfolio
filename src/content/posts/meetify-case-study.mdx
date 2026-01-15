@@ -1,0 +1,96 @@
+---
+title: "Meetify — Real-Time Video Meeting Platform Case Study"
+slug: "meetify-case-study"
+date: "2025-01-09"
+---
+
+## Meetify — Real-Time Video Meeting Platform
+
+Meetify is a real-time video meeting application built to understand peer-to-peer communication, real-time signaling, and multi-user application flows. The project focuses on building a functional video conferencing experience using modern web technologies.
+
+The goal was not to create a production-grade meeting tool, but to deeply understand how real-time systems work end to end.
+
+---
+
+## Problem I Wanted to Solve
+
+Most applications rely on request-response flows, but real-time communication introduces different challenges such as live media streaming, connection signaling, and user coordination.
+
+I wanted to build a project that would help me understand:
+
+- How peer-to-peer video and audio streaming works  
+- How users join and leave real-time sessions  
+- How signaling servers coordinate connections  
+- How real-time features fit into a full-stack application  
+
+---
+
+## What I Built
+
+Meetify includes the following core functionality:
+
+- User authentication (register and login)  
+- Ability to create or join video meeting rooms  
+- Real-time audio and video streaming using WebRTC  
+- Socket.IO-based signaling for peer connection setup  
+- Responsive UI across desktop and mobile devices  
+- Meeting history stored in the database  
+
+---
+
+## Tech Stack
+
+- **Frontend:** React (Vite), CSS Modules  
+- **Backend:** Node.js, Express  
+- **Database:** MongoDB  
+- **Real-Time:** WebRTC, Socket.IO  
+
+---
+
+## Architecture & Design
+
+Meetify follows a client-server architecture where:
+
+- WebRTC handles peer-to-peer audio and video streaming  
+- Socket.IO manages signaling and room coordination  
+- The backend stores user and meeting metadata  
+- The frontend manages UI state and media streams  
+
+This separation keeps real-time communication logic isolated from standard API workflows.
+
+---
+
+## Challenges & Solutions
+
+- **Managing peer connections** → used Socket.IO rooms for signaling coordination  
+- **Handling multiple users** → managed connection lifecycle events carefully  
+- **Media permissions and device access** → implemented proper browser handling  
+- **Responsive layout** → optimized UI for different screen sizes  
+
+---
+
+## Results
+
+- Successfully implemented multi-user video meetings  
+- Gained hands-on experience with WebRTC and real-time signaling  
+- Improved understanding of real-time application architecture  
+- Built confidence working with complex async flows  
+
+---
+
+## What I Learned
+
+This project helped me strengthen my skills in:
+
+- Real-time communication concepts  
+- WebRTC peer-to-peer media streaming  
+- Socket-based signaling and coordination  
+- Full-stack application design involving real-time features  
+- Debugging asynchronous and event-driven systems  
+
+---
+
+## Links
+
+- **Live Demo:** https://meetify-frontend.onrender.com  
+- **GitHub:** https://github.com/Noobod/Meetify

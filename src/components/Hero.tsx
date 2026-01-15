@@ -20,7 +20,14 @@ export default function Hero() {
 
       {/* Name heading */}
       <h1
-        className="mt-4 text-4xl md:text-6xl font-bold tracking-tight opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards] cursor-default"
+        className="
+          mt-4 text-4xl md:text-6xl font-bold tracking-tight
+          cursor-default
+          transition-all duration-300 ease-out
+          hover:-translate-y-1
+          hover:text-purple-400
+          opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]
+        "
         style={{ animationDelay: "0.3s" }}
       >
         Kapil Yadav
@@ -38,25 +45,23 @@ export default function Hero() {
 
       {/* Buttons section */}
       <div className="mt-7 flex gap-4 justify-center">
-
         {/* 1) VIEW PROJECTS FIRST */}
         <button
           onClick={() => scrollTo("#projects")}
-          className="order-1 px-5 py-2 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 transition rounded-lg text-sm md:text-base"
+          className="order-1 cursor-pointer px-5 py-2 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 transition rounded-lg text-sm md:text-base"
         >
           View Projects
         </button>
 
-        {/* 2) DOWNLOAD CV SECOND (manual download if user wants) */}
+        {/* 2) DOWNLOAD CV SECOND */}
         <a
           href="/projects/Kapil_Yadav_Junior_FullStack_Developer.pdf"
           download="Kapil_Yadav_Resume.pdf"
           onClick={downloadToast}
-          className="order-2 px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-purple-500 hover:text-purple-300 hover:bg-purple-600/10 transition rounded-lg text-sm md:text-base inline-block"
+          className="order-2 cursor-pointer px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-purple-500 hover:text-purple-300 hover:bg-purple-600/10 transition rounded-lg text-sm md:text-base inline-block"
         >
           Download CV
         </a>
-
       </div>
     </div>
   );

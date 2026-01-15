@@ -1,44 +1,82 @@
-Wanderlust is a full-stack accommodation booking platform inspired by Airbnb.
-I built it to practice system design, authentication, and end-to-end CRUD workflows.
+---
+title: "Wanderlust — Full-Stack Booking Platform Case Study"
+slug: "wanderlust-case-study"
+date: "2025-01-09"
+---
 
-Problem
+## Wanderlust — Full-Stack Accommodation Booking Platform
 
-Most tutorials cover isolated concepts, but I wanted a project that connects everything—users, bookings, authentication, listings, images, and search.
+Wanderlust is a full-stack accommodation booking platform inspired by Airbnb. I built this project to practice end-to-end system design, authentication, and real-world CRUD workflows in a single cohesive application.
 
-What I Built
+Instead of focusing on isolated features, my goal was to build a complete booking flow that connects users, listings, images, and reservations.
 
-Wanderlust includes:
+---
 
-User authentication and session handling
+## Problem I Observed
 
-Listing creation with images
+Most tutorials focus on individual concepts such as authentication, CRUD operations, or image uploads in isolation. I wanted a project that combined all these pieces into a realistic, production-style workflow.
 
-Map-based search
+---
 
-Booking form and reservation flow
+## What I Built
 
-Admin-style dashboard for managing listings
+Wanderlust includes the following core functionality:
 
-Tech & Architecture
+- User authentication and session handling  
+- Listing creation and management with image uploads  
+- Map-based listing search  
+- Booking and reservation flow  
+- Admin-style interface for managing listings  
 
-Node.js, Express, MongoDB, Mongoose
+---
 
-EJS templates for server-side rendering
+## Tech Stack
 
-Cloudinary for image uploads
+- **Backend:** Node.js, Express  
+- **Database:** MongoDB, Mongoose  
+- **Templating:** EJS (server-side rendering)  
+- **Media Storage:** Cloudinary  
 
-Structured in MVC architecture
+---
 
-Challenges
+## Architecture & Design
 
-Designing a clean database schema for bookings and listings
+The application is structured using an **MVC architecture**, separating routing, business logic, and data models for better maintainability.
 
-Handling multiple image uploads
+MongoDB schemas were designed to handle relationships between users, listings, and bookings, ensuring data consistency throughout the booking process.
 
-Ensuring server-side validation
+---
 
-Keeping the UI simple and responsive
+## Challenges & Solutions
 
-What I Learned
+- **Database schema design** → carefully modeled relationships between listings and bookings  
+- **Multiple image uploads** → integrated Cloudinary for reliable image storage  
+- **Server-side validation** → ensured data integrity and secure form handling  
+- **UI simplicity** → kept the interface clean and responsive across devices  
 
-This project solidified my understanding of full-stack logic, data modeling, authentication, and how real booking workflows operate.
+---
+
+## Results
+
+- End-to-end booking workflow implemented successfully  
+- Improved understanding of full-stack application flow  
+- Practical experience with authentication and data modeling  
+- A realistic project simulating real-world booking systems  
+
+---
+
+## What I Learned
+
+This project helped me strengthen my skills in:
+
+- Full-stack application development  
+- Database modeling and relationships  
+- Authentication and session management  
+- Designing complete user workflows  
+- Building maintainable MVC-based applications  
+
+---
+
+## Links
+
+- **GitHub:** https://github.com/Noobod/Wanderlust

@@ -1,39 +1,94 @@
-I worked on improving a local councillor’s public website, focusing on community request management.
+---
+title: "Community Voice — WordPress Plugin Case Study"
+slug: "community-voice-wordpress-case-study"
+date: "2025-01-09"
+---
 
-Problem
+## Improving Community Request Management for a Local Councillor
 
-Previously, people submitted requests through basic forms that went straight to email, which made it hard to track issues or manage follow-ups.
+While working on a local councillor’s public website, I observed that community requests were being submitted through basic contact forms that sent messages directly to email. This made it difficult to track issues, manage follow-ups, and maintain structured records over time.
 
-What I Built
+To address this, I proposed and built **Community Voice**, a custom WordPress plugin that replaces email-based submissions with a structured, trackable workflow inside WordPress.
 
-I created a custom WordPress plugin that adds:
+---
 
-A community request submission form
+## Problem I Observed
 
-Support for anonymous or identified submissions
+Before Community Voice:
 
-Internal admin dashboard for managing requests
+- Community requests were sent directly to email  
+- No way to track request status or history  
+- Follow-ups were manual and inconsistent  
+- Submissions were scattered across inboxes  
+- No structured data storage  
 
-Status updates and filtering options
+This resulted in missed follow-ups and limited visibility into community concerns.
 
-Server-side validation and security checks
+---
 
-Custom database tables to store submissions cleanly
+## What I Built
 
-Tech Used
+I developed a custom WordPress plugin with the following functionality:
 
-PHP, WordPress Plugin APIs
+- Public-facing submission form for community requests  
+- Option to submit requests anonymously or with contact details  
+- Admin interface to view, manage, and track requests  
+- Request status management (pending, in progress, resolved, closed)  
+- File upload support for attachments  
+- Server-side validation and basic security checks  
+- Custom database tables for clean, structured data storage  
 
-MySQL integration
+---
 
-Challenges
+## Tech Stack
 
-Designing the plugin to match WordPress coding standards
+- **Backend:** PHP  
+- **CMS:** WordPress Plugin APIs  
+- **Database:** MySQL  
 
-Managing form data outside default WP post types
+---
 
-Creating an easy-to-use admin panel for non-technical users
+## Architecture & Design
 
-What I Learned
+The plugin follows standard WordPress plugin architecture using hooks and actions.  
+Custom database tables were used instead of default WordPress post types to provide better control over data structure and performance.
 
-This project helped me understand plugin architecture, backend logic in PHP, and how to build custom admin tools inside WordPress.
+The admin interface was intentionally kept simple so non-technical staff could manage requests easily.
+
+---
+
+## Challenges & Solutions
+
+- **Email-based workflow limitations** → replaced with structured form submissions  
+- **Managing data outside WP post types** → implemented custom database tables  
+- **Admin usability** → designed a minimal and intuitive admin interface  
+- **Data validation & security** → added server-side validation and checks  
+
+---
+
+## Results
+
+After implementing Community Voice:
+
+- Community requests became easier to track and manage  
+- Follow-ups were more consistent  
+- All submissions were stored centrally inside WordPress  
+- Admin workload related to email handling was reduced  
+
+---
+
+## What I Learned
+
+This project helped me improve my skills in:
+
+- WordPress plugin architecture  
+- Backend development with PHP  
+- Database design and integration  
+- Building admin tools for non-technical users  
+- Translating real-world problems into practical software solutions  
+
+---
+
+## Links
+
+- **Live Website:** https://sreenipillamarri.com.au/

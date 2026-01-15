@@ -4,22 +4,54 @@ export const projects = [
     title: "XFlyve Logistics Automation Platform",
     image: "/projects/xflyve.png",
     description:
-      "A SaaS platform that automates logistics operations, replacing spreadsheet workflows and improving operational efficiency by 70%.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Docker", "GitHub Actions"],
+      "An internal web application built to replace spreadsheet-based logistics workflows and reduce manual operational effort by ~70%.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Docker",
+      "GitHub Actions",
+    ],
     live: "https://xflyve.vercel.app/",
     github: "https://github.com/Noobod/XFlyve",
     details: `
-      XFlyve automates logistics tasks such as driver scheduling, delivery tracking and internal communication.
+XFlyve is an internal logistics automation tool I designed and built while working in operations to streamline daily coordination tasks.
 
-      ✦ Key Features:
-      - Admin dashboard with automated reporting
-      - Realtime driver & delivery tracking
-      - Authentication + role-based permissions
-      - Docker-based deployment and CI/CD with GitHub Actions
+✦ Key Features:
+- Public landing page for company access
+- Secure admin login to create and assign jobs
+- Driver login to view assigned tasks
+- Role-based authentication and authorization
+- File uploads for operational documents
+- Dockerized setup with CI/CD using GitHub Actions (working knowledge)
 
-      ✦ Impact:
-      Reduced operational manual workload by over 70%.
-    `,
+✦ Impact:
+Reduced daily manual operational work by ~70% by replacing Excel-based coordination.
+  `,
+  },
+
+  {
+    id: "wordpress",
+    title: "Community Voice — WordPress Plugin",
+    image: "/projects/Wordpress.png",
+    description:
+      "A custom WordPress plugin built during my internship to capture community concerns (anonymous option), track requests in admin, and notify users via email.",
+    tech: ["PHP", "WordPress Plugin APIs", "MySQL", "AI Chatbot Integration"],
+    live: "https://sreenipillamarri.com.au/",
+    details: `
+Community Voice is a WordPress plugin I proposed and built to replace email-based submissions with a structured workflow inside WordPress.
+
+✦ Key Features:
+- Front-end form with optional anonymous submission
+- File upload support and reference ID generation per submission
+- Admin workflow with request status tracking (Pending / In Progress / Resolved / Closed)
+- Email notifications to admin and user (when not anonymous)
+- Integrated and configured an AI chatbot (FastBots) to support public-facing queries
+
+✦ Purpose:
+Built during my internship to create a reliable, trackable process for community requests.
+  `,
   },
 
   {
@@ -46,112 +78,80 @@ export const projects = [
   },
 
   {
-    id: "wordpress",
-    title: "WordPress Custom Plugin System",
-    image: "/projects/Wordpress.png",
+    id: "tradetrack",
+    title: "TradeTrack — Trading Dashboard Simulation",
+    image: "/projects/TradeTrack.png",
     description:
-      "Fully custom WordPress plugin with REST APIs, database integration and admin dashboard.",
-    tech: ["PHP", "WordPress Plugins"],
-    live : "https://sreenipillamarri.com.au/",
+      "A responsive trading dashboard simulation built to practice dashboard-heavy UI, authentication, and data visualisation using the MERN stack.",
+    tech: [
+      "React",
+      "Bootstrap",
+      "Material UI",
+      "Chart.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    live: "https://trade-track-front.vercel.app",
+    github: "https://github.com/Noobod/TradeTrack",
     details: `
-      Custom-built plugin to automate backend workflows and store structured data inside WordPress.
+TradeTrack is a simulated trading dashboard inspired by modern stock trading platforms.
+The project focuses on building a realistic dashboard experience using simulated data.
 
-      ✦ Features:
-      - Full plugin lifecycle: activation, uninstall cleanup, schema migration
-      - Custom DB model with MySQL persistence
+✦ Key Features:
+- Authentication with simulated user accounts
+- Dashboard views for holdings, positions, and orders
+- Interactive charts using Chart.js
+- Simulated order placement and historical data
+- Fully responsive UI for desktop and mobile
 
-      ✦ Purpose:
-      Built during internship to automate repeated internal tasks.
-    `,
+✦ Architecture:
+- React-based landing and dashboard interfaces
+- Express API with MongoDB data models
+- Clear separation between frontend and backend
+
+✦ Purpose:
+Built as a learning-focused project to understand dashboard design, authentication flows, and data visualisation in a MERN application.
+  `,
   },
 
   {
-  id: "tradetrack",
-  title: "TradeTrack – Zerodha Clone Trading Dashboard",
-  image: "/projects/TradeTrack.png",
-  description:
-    "A fully responsive clone of Zerodha’s trading dashboard with simulated trading data, authentication, charts, and a clean professional UI.",
-  tech: ["React", "Bootstrap", "MUI", "Chart.js", "Node.js", "Express", "MongoDB"],
-  live: "https://trade-track-front.vercel.app",
-  github: "https://github.com/Noobod/TradeTrack",
-  details: `
-    TradeTrack is a Zerodha-style trading interface built with a complete MERN setup.
-    It simulates a real-world trading workflow including holdings, positions, orders, and charts.
+    id: "meetify",
+    title: "Meetify — Real-Time Video Meeting Platform",
+    image: "/projects/Meetify.png",
+    description:
+      "A real-time video meeting platform built to understand WebRTC, real-time signaling, and multi-user communication using a full MERN backend.",
+    tech: [
+      "React",
+      "Vite",
+      "CSS Modules",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "WebRTC",
+    ],
+    live: "https://meetify-frontend.onrender.com",
+    github: "https://github.com/Noobod/Meetify",
+    details: `
+Meetify is a full-stack real-time video meeting application built to explore peer-to-peer communication and real-time systems.
 
-    ✦ Features:
-    - Clone of Zerodha trading interface
-    - Fully responsive: mobile + desktop
-    - Holdings, Positions, Orders dashboards
-    - Chart.js-powered analytics
-    - Signup/Login (Passport.js local strategy)
-    - New order placement (simulated)
-    - Historical positions & holdings
-    - MongoDB Atlas backend integration
+✦ Key Features:
+- User authentication (register / login)
+- Create and join video meetings
+- Real-time audio and video streaming using WebRTC
+- Socket.IO-based signaling for peer connection setup
+- Responsive UI across devices
+- Meeting history stored in the database
 
-    ✦ Tech:
-    React, Bootstrap UI, MUI components, Chart.js charts, Node.js, Express.js, MongoDB Atlas
+✦ Architecture:
+- React frontend built with Vite
+- Express backend with MongoDB for persistence
+- WebRTC for peer-to-peer media streaming
+- Socket.IO for signaling and room coordination
 
-    ✦ Structure:
-    - frontend (React landing page)
-    - dashboard (React trading dashboard)
-    - backend (Express + MongoDB API)
-
-    ✦ Demo Credentials:
-    Email: demo@TradeTrack.com  
-    Password: demo123
-
-    ✦ Deployment:
-    Frontend deployed on Vercel.
+✦ Purpose:
+Built as a learning-focused project to understand real-time communication, signaling, and multi-user application flows in a full-stack environment.
   `,
-},
-
-{
-  id: "meetify",
-  title: "Meetify – Real-Time Video Meeting App",
-  image: "/projects/Meetify.png",
-  description:
-    "A real-time video meeting platform using WebRTC, Socket.IO, and a full MERN backend. Users can host or join meetings with live audio/video.",
-  tech: [
-    "React",
-    "Vite",
-    "CSS Modules",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "Socket.IO",
-    "WebRTC"
-  ],
-  live: "https://meetify-frontend.onrender.com",
-  github: "https://github.com/Noobod/Meetify",
-  details: `
-    Meetify is a full-stack real-time video conferencing platform built from scratch using WebRTC and Socket.IO.
-    It supports multi-user video calls, meeting creation, authentication, and meeting history tracking.
-
-    ✦ Features:
-    - User authentication (Register / Login)
-    - Create or join video meetings
-    - Real-time video & audio streaming using WebRTC
-    - Socket.IO signaling for peer connections
-    - Responsive UI for all devices
-    - Track meeting history
-    - Separate frontend + backend deployment on Render
-
-    ✦ Tech:
-    Frontend: React (Vite), CSS Modules  
-    Backend: Node.js, Express, MongoDB (Mongoose)  
-    Real-Time: WebRTC + Socket.IO  
-    Other: Axios, bcrypt, dotenv, CORS
-
-    ✦ How WebRTC Works:
-    - Peer-to-peer audio/video streaming  
-    - Very low latency  
-    - Browser-native, no plugins required  
-    - Socket.IO handles signaling & connection setup
-
-    ✦ Deployment:
-    Frontend: Render  
-    Backend: Render  
-  `,
-},
-
+  },
 ];
