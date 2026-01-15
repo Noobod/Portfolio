@@ -1,31 +1,33 @@
-# 🚀 Kapil Yadav — Developer Portfolio
+# Kapil Yadav — Developer Portfolio
 
-A modern, fast, and animated developer portfolio built with Next.js 16, TypeScript, Tailwind CSS, MDX blog system, and Framer Motion.
+A modern, high-performance developer portfolio built with Next.js (App Router), TypeScript, Tailwind CSS, MDX, and Framer Motion.
 
-🌐 Live Portfolio
+## Live Portfolio
+https://kapilyadav.dev
 
-🔗 https://kapilyadav.dev
+## Overview
 
-This portfolio demonstrates:
+This portfolio showcases my real-world projects, case studies, and engineering approach through a fast, animated, and fully responsive web experience.
 
-⚡ High-performance Next.js App Router
+It demonstrates:
 
-🎨 Clean UI, smooth animations, scroll progress
+High-performance Next.js App Router architecture
 
-✍️ MDX-powered blog system
+Clean UI with smooth animations and scroll progress
 
-📱 Fully responsive design
+MDX-powered blog & case studies
 
-💼 Showcase of real-world client & SaaS projects
+Fully responsive, mobile-first design
 
-🎬 Animated carousels, modals, transitions
+Real client & SaaS-style projects
 
-🛠 Strong project architecture & reusable components
+Modular, reusable component architecture
 
-## 🛠 Tech Stack
-Frontend
+## Tech Stack
 
-Next.js 16 (App Router, Server Actions)
+### Frontend
+
+Next.js (App Router)
 
 TypeScript
 
@@ -35,84 +37,89 @@ Framer Motion
 
 MDX
 
-UI Components
+UI & UX
 
-Custom Carousel
+Custom project modals
 
-Animated Modals
+Animated carousels
 
-Scroll Progress Indicator
+Scroll progress indicator
 
-Glassmorphism Cards
+Glassmorphism cards
 
-Other Tools
+Tooling & Deployment
 
-Vercel Analytics
+Vercel
 
 GitHub Actions (CI/CD ready)
 
-## 📁 Project Structure
+Optimized image & page rendering
+
+## Project Structure
+```txt
 src/
  ├── app/
- │    ├── blog/         → MDX Blog  
- │    ├── components/   → UI Components  
- │    ├── data/         → Project data  
- │    ├── page.tsx      → Homepage  
- │    └── layout.tsx    → Global layout  
+ │    ├── blog/           # MDX blog & case studies
+ │    ├── components/     # Reusable UI components
+ │    ├── data/           # Project & AI data
+ │    ├── page.tsx        # Homepage
+ │    └── layout.tsx      # Global layout
  │
- └── content/posts      → MDX Blog Posts
+ └── content/posts        # MDX blog content
+```
 
-## 📝 Features
-🎨 Stunning UX
+## Key Features
+### UX & Animations
 
-Smooth fade/slide animations
+Smooth fade & slide transitions
 
-Clean layout
+Clean, distraction-free layout
 
-Professional project cards
+Accessible and responsive UI
 
-Accessible and responsive
+### MDX Blog System
 
-📚 MDX Blog
+Markdown + React components
 
-Write rich blog posts using Markdown + React components
+SEO-friendly routing
 
-SEO-friendly pages
+Easy content management
 
-Simple content folder management
+### Project Showcase
 
-💼 Project Modal
+Detailed descriptions
 
-Descriptions
+Tech stack tags
 
-Tech stack pills
+GitHub & live demo links
 
-GitHub + Live Links
+### Performance
 
-🚀 Performance
-
-Optimized images
+Optimized assets
 
 Static + dynamic rendering
 
 Deployed on Vercel
 
-## 🚀 Running Locally
-git clone https://github.com/kapilyadav/portfolio
+## Running Locally
+```bash
+git clone https://github.com/Noobod/portfolio
 cd portfolio
 npm install
 npm run dev
+```
 
-## 📬 Contact
+## Contact
 
 Kapil Yadav
 Sydney, Australia
-📧 ykapil086@gmail.com
 
-🌐 portfolio: https://kapilyadav.dev
+Email: ykapil086@gmail.com
 
-💼 LinkedIn: https://linkedin.com/in/kapil-yadav-dev
+Portfolio: https://kapilyadav.dev
 
-## 🏁 License
+LinkedIn: https://linkedin.com/in/yadav-kapil
+
+## License
 
 MIT License — free to use and adapt.
