@@ -33,7 +33,7 @@ export default function Experience() {
           </h3>
 
           <p className="text-gray-400 text-xs md:text-sm mt-1">
-            Aug 2025 — Present • Sydney
+            Nov 2025 — Present • Sydney
           </p>
 
           <p className="text-gray-300 text-sm md:text-base mt-2">
@@ -60,7 +60,7 @@ export default function Experience() {
           </h3>
 
           <p className="text-gray-400 text-xs md:text-sm mt-1">
-            Oct 2024 — Jul 2025 • Sydney
+            Oct 2024 — Aug 2025 • Sydney
           </p>
 
           <p className="text-gray-300 text-sm md:text-base mt-2">

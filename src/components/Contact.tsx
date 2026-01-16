@@ -34,7 +34,7 @@ export default function Contact() {
         viewport={{ once: true }}
         className="text-gray-400 text-sm md:text-base leading-relaxed mb-10"
       >
-        I'm open to full-time developer roles, internships, freelance work or
+        I'm open to full-time & part-time developer roles, freelance work or
         any collaboration that brings ideas to life.
       </motion.p>
 
