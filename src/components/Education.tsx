@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 const education = [
   {
     title: "Master of Information Technology",
-    school: "Asia Pacific International College, Australia",
+    school: "Asia Pacific International College, Australia, Dec 2025",
     details: "Focused on information systems, data management, cloud computing, networking, cyber security, and applied software projects."
   },
   {
     title: "Bachelor of Technology ",
-    school: "Jodhpur National University, India",
+    school: "Jodhpur National University, India, June 2019",
     details: "Studied core computer science subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Software Engineering."
   }
 ];

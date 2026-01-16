@@ -69,10 +69,10 @@ export default function About() {
         </p>
 
         <p>
-          I’m currently based in Sydney and open to a{" "}
+          I'm based in Sydney with full Australian work rights and currently seeking a{" "}
           <span className="text-purple-400 font-semibold">
             full-time developer role
-          </span>
+          </span> starting February 2026
           . I’m looking for a team where I can learn from strong engineers,
           contribute to real projects, and keep growing as a full-stack
           developer.
