@@ -4,11 +4,11 @@ export const aiKnowledge = {
 Kapil Yadav — Junior Full-Stack Developer (Sydney)
 
 Frontend:
-• React, Next.js, TypeScript, JavaScript
+• React.js, Next.js, TypeScript, JavaScript
 • Tailwind CSS, Material UI, HTML, CSS
 
 Backend:
-• Node.js, Express, REST APIs, JWT Authentication
+• Node.js, Express, RESTfull APIs, JWT Authentication
 • WordPress Custom Plugins (PHP), WordPress Hooks/APIs
 
 Databases:
@@ -59,7 +59,7 @@ Highlighted Projects (deployed + GitHub):
 
   experience: `
 Experience:
-• Software Developer Intern — Softlabs (Sydney) | Aug 2025 – Jan 2026
+• Software Developer Intern — Softlabs (Sydney) | Nov 2025 – Jan 2026
   - Built production WordPress plugin “Community Voice” (custom workflows, admin tools, security basics)
   - Integrated and configured an AI chatbot (FastBots) for public info Q&A
   - Worked in Agile workflow using Jira (tickets, updates, delivery)
