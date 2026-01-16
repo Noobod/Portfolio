@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 export default function Skills() {
   const skills = {
     Frontend: [
-      "React",
+      "React.js",
       "Next.js",
       "TypeScript",
       "JavaScript",
       "TailwindCSS",
       "Material-UI",
     ],
-    Backend: ["Node.js", "Express", "REST APIs", "JWT Auth"],
-    "CMS / PHP": ["WordPress Custom Plugins", "PHP"],
+    Backend: ["Node.js", "Express", "RESTfull APIs", "JWT Auth"],
+    "CMS & PHP": ["WordPress Custom Plugins", "PHP"],
     Databases: ["MongoDB", "Mongoose", "SQL"],
     "DevOps & Cloud": [
       "Docker",
