@@ -62,7 +62,7 @@ export default function Hero() {
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
-        Full Australian Work Rights • Graduate Visa (485)
+        Full Australian Work Rights
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
