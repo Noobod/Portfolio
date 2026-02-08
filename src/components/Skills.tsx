@@ -11,7 +11,7 @@ export default function Skills() {
       "TailwindCSS",
       "Material-UI",
     ],
-    Backend: ["Node.js", "Express", "RESTfull APIs", "JWT Auth"],
+    Backend: ["Node.js", "Express", "REST APIs", "JWT Auth"],
     "CMS & PHP": ["WordPress Custom Plugins", "PHP"],
     Databases: ["MongoDB", "Mongoose", "SQL"],
     "DevOps & Cloud": [

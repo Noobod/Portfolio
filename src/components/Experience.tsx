@@ -40,7 +40,7 @@ export default function Experience() {
             Built a custom WordPress plugin for community request tracking
             (anonymous submissions, admin workflows, file uploads, email
             notifications), integrated and configured a FastBots AI chatbot for
-            public-facing queries, and worked in an Agile environment using Jira
+            public-facing queries, and worked in an Agile environment
             for task tracking and feature delivery.
           </p>
         </motion.div>
@@ -56,7 +56,7 @@ export default function Experience() {
           <div className="absolute -left-[12px] top-1 w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_12px_rgba(168,85,247,0.7)]" />
 
           <h3 className="text-lg md:text-xl font-semibold">
-            XFlyve Logistics — Operations Administrator & Developer
+            XFlyve Logistics — Developer & Operations
           </h3>
 
           <p className="text-gray-400 text-xs md:text-sm mt-1">

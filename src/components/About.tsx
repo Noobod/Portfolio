@@ -72,8 +72,7 @@ export default function About() {
           I'm based in Sydney with full Australian work rights and currently seeking a{" "}
           <span className="text-purple-400 font-semibold">
             full-time developer role
-          </span>
-          . I’m looking for a team where I can learn from strong engineers,
+          </span>. I’m looking for a team where I can learn from strong engineers,
           contribute to real projects, and keep growing as a full-stack
           developer.
         </p>
