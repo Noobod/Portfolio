@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const education = [
   {
     title: "Master of Information Technology",
-    school: "Asia Pacific International College, Australia, Dec 2025",
+    school: "Asia Pacific International College, Australia, Jan 2026",
     details: "Focused on information systems, data management, cloud computing, networking, cyber security, and applied software projects."
   },
   {
