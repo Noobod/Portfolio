@@ -65,7 +65,7 @@ export default function Hero() {
       </p>
 
       <p className="mt-3 text-base md:text-lg text-gray-400 max-w-md">
-        Full-Stack Software Engineer • React • Node.js • Building Real-World Systems
+        React • Node.js • Building Real-World Systems
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
