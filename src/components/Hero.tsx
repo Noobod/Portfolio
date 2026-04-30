@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -6,8 +7,10 @@ export default function Hero() {
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => setMounted(true), []);
-  
+
   if (!mounted) return null;
+
+  const resumePath = "/projects/Kapil_Yadav_FullStack_Engineer.pdf";
 
   const scrollTo = (id: string) => {
     const element = document.querySelector(id);
@@ -18,21 +21,21 @@ export default function Hero() {
 
   const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    
+
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
-    
+
     const link = document.createElement("a");
-    link.href = "/projects/Kapil_Yadav_Junior_FullStack_Developer.pdf";
-    link.download = "Kapil_Yadav_Resume.pdf";
-    
+    link.href = resumePath;
+    link.download = "Kapil_Yadav_FullStack_Engineer.pdf";
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     setTimeout(() => {
       if (!document.hidden) {
-        window.open("/projects/Kapil_Yadav_Junior_FullStack_Developer.pdf", "_blank");
+        window.open(resumePath, "_blank");
       }
     }, 500);
   };
@@ -44,7 +47,7 @@ export default function Hero() {
     >
       {showToast && (
         <div className="fixed top-4 right-4 bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg z-50">
-          Download started...
+          Opening resume...
         </div>
       )}
 
@@ -57,8 +60,16 @@ export default function Hero() {
         Kapil Yadav
       </h1>
 
-      <p className="mt-2 text-base md:text-lg text-gray-400 max-w-md">
-        Full-Stack Developer • MERN • TypeScript • Next.js • WordPress Plugins
+      <p className="mt-3 text-lg md:text-2xl text-purple-400 font-medium">
+        Full-Stack Software Engineer
+      </p>
+
+      <p className="mt-3 text-sm md:text-base text-gray-400 max-w-lg">
+        I build end-to-end applications that solve real operational problems and improve workflows.
+      </p>
+
+      <p className="mt-3 text-base md:text-lg text-gray-400 max-w-md">
+        React • Node.js • TypeScript • Next.js • WordPress Plugins
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
@@ -66,7 +77,7 @@ export default function Hero() {
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
-        Based in Sydney • Open to Full-Time
+        Sydney, Australia • Open to Full-Time Roles
       </p>
 
       <div className="mt-7 flex gap-4 justify-center">
@@ -74,15 +85,15 @@ export default function Hero() {
           onClick={() => scrollTo("#projects")}
           className="order-1 cursor-pointer px-5 py-2 md:px-6 md:py-3 bg-purple-600 hover:bg-purple-700 transition rounded-lg text-sm md:text-base"
         >
-          View Projects
+          View My Work
         </button>
 
         <a
-          href="/projects/Kapil_Yadav_Junior_FullStack_Developer.pdf"
+          href={resumePath}
           onClick={handleDownload}
           className="order-2 cursor-pointer px-5 py-2 md:px-6 md:py-3 border border-gray-600 hover:border-purple-500 hover:text-purple-300 hover:bg-purple-600/10 transition rounded-lg text-sm md:text-base inline-block"
         >
-          Download CV
+          Download Resume
         </a>
       </div>
     </div>
