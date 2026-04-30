@@ -91,7 +91,7 @@ export default function Experience() {
           </h3>
 
           <p className="text-gray-400 text-xs md:text-sm mt-1">
-            Mar 2022 — Apr 2023 • Jaipur, India
+            Mar 2022 — Apr 2023 • India
           </p>
 
           <p className="text-gray-300 text-sm md:text-base mt-2">

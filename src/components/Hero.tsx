@@ -64,12 +64,8 @@ export default function Hero() {
         Full-Stack Software Engineer
       </p>
 
-      <p className="mt-3 text-sm md:text-base text-gray-400 max-w-lg">
-        I build end-to-end applications that solve real operational problems and improve workflows.
-      </p>
-
       <p className="mt-3 text-base md:text-lg text-gray-400 max-w-md">
-        React • Node.js • TypeScript • Next.js • WordPress Plugins
+        Full-Stack Software Engineer • React • Node.js • Building Real-World Systems
       </p>
 
       <p className="mt-2 text-sm md:text-base text-gray-500 italic">
