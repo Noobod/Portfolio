@@ -27,7 +27,7 @@ export default function Hero() {
 
     const link = document.createElement("a");
     link.href = resumePath;
-    link.download = "Kapil_Yadav_FullStack_Engineer.pdf";
+    link.download = "Resume_Kapil_Yadav_FullStack_Engineer.pdf";
 
     document.body.appendChild(link);
     link.click();
