@@ -10,7 +10,7 @@ export default function Hero() {
 
   if (!mounted) return null;
 
-  const resumePath = "/projects/Kapil_Yadav_FullStack_Engineer.pdf";
+  const resumePath = "/projects/Resume_Kapil_Yadav_FullStack_Engineer.pdf";
 
   const scrollTo = (id: string) => {
     const element = document.querySelector(id);
